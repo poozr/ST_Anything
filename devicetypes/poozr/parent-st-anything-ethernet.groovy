@@ -331,7 +331,7 @@ private void createChildDevice(String deviceName, String deviceNumber) {
         {
         	def deviceHandlerName = ""
         	switch (deviceName) {
-         		case "contact": 
+         	case "contact": 
                 	deviceHandlerName = "Child Contact Sensor" 
                 	break
             	case "valve":
