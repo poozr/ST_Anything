@@ -1,7 +1,7 @@
 /**
  *  Parent_ST_Anything_Ethernet.groovy
  *
- *  Copyright 2017 Dan G Ogorchock 
+ *  Copyright 2017 Rob Rhodes
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -27,7 +27,7 @@
  
 metadata {
 	definition (name: "Parent_ST_Anything_Ethernet", namespace: "poozr", author: "Rob Rhodes") {
-		    capability "Configuration"
+	capability "Configuration"
         capability "Refresh"
         capability "Button"
         capability "Holdable Button"
@@ -334,51 +334,51 @@ private void createChildDevice(String deviceName, String deviceNumber) {
          		case "contact": 
                 	deviceHandlerName = "Child Contact Sensor" 
                 	break
-            case "valve":
-                  deviceHandlerName = "Child Valve"
-                  break
-         		case "switch": 
+            	case "valve":
+                  	deviceHandlerName = "Child Valve"
+                  	break
+         	case "switch": 
                 	deviceHandlerName = "Child Switch" 
                 	break
-         		case "relaySwitch": 
+         	case "relaySwitch": 
                 	deviceHandlerName = "Child Relay Switch" 
                 	break
-				    case "temperature": 
+		case "temperature": 
                 	deviceHandlerName = "Child Temperature Sensor" 
                 	break
-         		case "humidity": 
+         	case "humidity": 
                 	deviceHandlerName = "Child Humidity Sensor" 
                 	break
-         		case "motion": 
+         	case "motion": 
                 	deviceHandlerName = "Child Motion Sensor" 
                 	break
-         		case "water": 
+         	case "water": 
                 	deviceHandlerName = "Child Water Sensor" 
                 	break
-         		case "illuminance": 
+         	case "illuminance": 
                 	deviceHandlerName = "Child Illuminance Sensor" 
                 	break
-         		case "voltage": 
+         	case "voltage": 
                 	deviceHandlerName = "Child Voltage Sensor" 
                 	break
-				    case "smoke": 
+		case "smoke": 
                 	deviceHandlerName = "Child Smoke Detector" 
                 	break    
-				    case "carbonMonoxide": 
+		case "carbonMonoxide": 
                 	deviceHandlerName = "Child Carbon Monoxide Detector" 
                 	break    
-         		case "alarm": 
+         	case "alarm": 
                 	deviceHandlerName = "Child Alarm" 
                 	break    
-         		case "doorControl": 
+         	case "doorControl": 
                 	deviceHandlerName = "Child Door Control" 
                 	break    
-				    default: 
+		default: 
                 	log.error "No Child Device Handler case for ${deviceName}"
       		}
             if (deviceHandlerName != "") {
-				addChildDevice(deviceHandlerName, "${device.deviceNetworkId}-${deviceName}${deviceNumber}", null,
-		      		[completedSetup: true, label: "${device.displayName} (${deviceName}${deviceNumber})", 
+		addChildDevice(deviceHandlerName, "${device.deviceNetworkId}-${deviceName}${deviceNumber}", null,
+		      	[completedSetup: true, label: "${device.displayName} (${deviceName}${deviceNumber})", 
                 	isComponent: false, componentName: "${deviceName}${deviceNumber}", componentLabel: "${deviceName} ${deviceNumber}"])
         	}   
     	} catch (e) {
