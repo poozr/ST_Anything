@@ -259,13 +259,13 @@ void childRelayOff(String dni) {
 
 void childOpen(String dni){
 	def name = dni.split("-")[-1]
-	log.debug childOpen($dni), name = ${name}"
+	log.debug "childOpen($dni), name = ${name}"
 	sendEthernet("${name} open")
 }
 
 void childClose(String dni){  //Close the Valve
 	def name = dni.split("-")[-1]
-	log.debug childClose($dni), name = ${name}"
+	log.debug "childClose($dni), name = ${name}"
 	sendEthernet("${name} close")
 }
 
