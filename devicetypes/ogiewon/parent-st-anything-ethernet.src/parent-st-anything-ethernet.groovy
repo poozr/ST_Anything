@@ -263,7 +263,7 @@ void childOpen(String dni){
 	sendEthernet("${name} open")
 }
 
-void childClose(String dni){  //Close the Valve
+void childClose(String dni){
 	def name = dni.split("-")[-1]
 	log.debug "childClose($dni), name = ${name}"
 	sendEthernet("${name} close")
