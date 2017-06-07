@@ -257,6 +257,18 @@ void childRelayOff(String dni) {
     sendEthernet("${name} off")
 }
 
+void childOpen(String dni){
+	def name = dni.split("-")[-1]
+	log.debug childOpen($dni), name = ${name}"
+	sendEthernet("${name} open")
+}
+
+void childClose(String dni){
+	def name = dni.split("-")[-1]
+	log.debug childClose($dni), name = ${name}"
+	sendEthernet("${name} close")
+}
+
 def configure() {
 	log.debug "Executing 'configure()'"
     updateDeviceNetworkID()
@@ -267,18 +279,6 @@ def refresh() {
 	log.debug "Executing 'refresh()'"
 	sendEthernet("refresh")
 	sendEvent(name: "numberOfButtons", value: numButtons)
-}
-
-void childOpen(String dni){
-  def name = dni.split("-")[-1]
-  log.debug childOpen($dni), name = ${name}"
-    sendEthernet("${name} open")
-}
-
-void childClose(String dni){
-  def name = dni.split("-")[-1]
-  log.debug childClose($dni), name = ${name}"
-    sendEthernet("${name} close")
 }
 
 def installed() {
