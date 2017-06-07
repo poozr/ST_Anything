@@ -1,4 +1,4 @@
-**
+/**
  *  Child Valve
  *
  *  Copyright 2017 Rob Rhodes
@@ -25,10 +25,6 @@
 metadata {
 	definition (name: "Child Valve", namespace: "poozr", author: "Rob Rhodes") {
 		capability "Valve"
-		capability "Switch"
-		capability "Relay Switch"
-		capability "Actuator"
-		capability "Sensor"
 	}
 
 	tiles(scale: 2) {
